@@ -1,0 +1,177 @@
+// Фаил Обнуляющих Стилей
+@import "_nullstyle";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+//Шрифт по умолчанию
+$fontfamily: "Lato";
+
+//Переменные
+$minwidth:320px;
+$mw:880;
+$md1:$mw+12;
+$md2:992.98;
+$md3:767.98;
+$md4:479.98;
+
+
+
+//Миксины
+@mixin flexbox(){display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex; font-size: 0;}
+@mixin tr($x,$y,$z){transform: translate3d($x,$y,$z); -webkit-transform: translate3d($x, $y, $z);-ms-transform: translate3d($x, $y, $z);-moz-transform: translate3d($x, $y, $z);-o-transform: translate3d($x, $y, $z);}
+@mixin anim($time,$deley){transition: all $time ease $deley;-webkit-transition: all $time ease $deley;-ms-transition: all $time ease $deley;-moz-transition: all $time ease $deley;-o-transition: all $time ease $deley;}
+@mixin scale($num){transform: scale($num);-webkit-transform: scale($num);-ms-transform: scale($num);-moz-transform: scale($num);-o-transform: scale($num);}
+@mixin rotate($deg){transform: rotate($deg);-webkit-transform: rotate($deg);-ms-transform: rotate($deg);-moz-transform: rotate($deg);-o-transform: rotate($deg);}
+@mixin flexorder($val){-moz-box-ordinal-group: $val;-webkit-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-order: $val;order: $val;}
+
+
+
+
+
+
+//Основная сетка
+/*.container{max-width: $mw+px;margin: 0 auto;width: 100%;
+@media (max-width:$md1+px){max-width: 750px;}
+@media (max-width:$md2+px){max-width: none;padding: 0 10px;}
+}*/
+
+
+
+//IBG-IMAGE v BACKGROUND
+.ibg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	img{
+		display: none;
+	}
+}
+//--------------------------------------------------------------------------
+
+
+
+//SLIDER--------------------------------------------------------------------
+.slick-slider{
+	position: relative;
+	.slick-track,.slick-list{}
+	.slick-list{
+		overflow: hidden;
+	}
+	.slick-track{
+		@include flexbox();
+		align-items: flex-start;
+	}
+	.slick-slide{}
+	.slick-bots{
+		li{
+			button{}
+			&.slick-active{
+				button{}
+			}
+		}
+	}
+}
+//-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+html,
+body{
+	height: 100%;
+}
+
+
+
+
+		.wrapper {
+			width: 100%;
+			min-height: 100%;
+			overflow: hidden;
+		}
+	
+		.page {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+	
+		.parallax {
+			position: relative;
+			height: 100%;
+	
+			&__montain {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+	
+			&__montain-1 {
+				background: url(../../img/m_1.png) 0 0 / cover no-repeat;
+			}
+	
+			&__montain-2 {
+				z-index: 1;
+				background: url(../../img/m_2.png) bottom right / 45% no-repeat;
+			}
+	
+			&__montain-3 {
+				z-index: 1;
+				background: url(../../img/m_3.png) left bottom / 100% no-repeat;
+			}
+	
+			&__fog {
+				background: url(../../img/fog_1.png) bottom / 100% no-repeat;
+				position: fixed;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+		}
+	
+		.content {
+			position: relative;
+	
+			&__body {
+				max-width: 1170px;
+				margin: 0 auto;
+			}
+	
+			&__header {
+				text-align: center;
+				text-transform: uppercase;
+				margin-bottom: 20px;
+				padding: 0 20px;
+			}
+	
+			&__title {
+				font-size: 200px;
+			}
+	
+			&__subtitle {
+				font-size: 120px;
+			}
+	
+			&__article {
+				background-color: rgba(255, 255, 255, 0.5);
+				padding: 25px;
+				font-size: 18px;
+				line-height: 24px;
+				p{
+					margin-bottom: 20px;
+				}
+			}
+		}
